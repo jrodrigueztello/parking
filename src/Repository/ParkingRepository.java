@@ -1,24 +1,25 @@
 package Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Parking.Parking;
 
 public class ParkingRepository {
-	
-	//constructor
-	public ParkingRepository() {
-		//connection database
-		
-		//============
-	}
+	ArrayList<Parking> listparking = new ArrayList<Parking>();
 
-	public Parking save(Parking parkingData) {
-		// TODO Auto-generated method stub
-		return parkingData;
+	public Boolean save(Parking parkingData) {
+		try {
+			listparking.add(parkingData);
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
 	}
 
 	public List<Parking> listar() {
-		return null;
+		return listparking;
 	}
+
 }

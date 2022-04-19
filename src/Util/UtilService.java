@@ -1,12 +1,42 @@
 package Util;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class UtilService {
-	public Long obtainHoursBetweenDates(Timestamp startDate, Timestamp endDate) {
-		Long difference = (endDate.getTime()-startDate.getTime()); 
-		return difference / (60 * 60 * 1000);
-		
-		
+	public ArrayList<Long> obtainHoursBetweenDates(Timestamp startDate, Timestamp endDate) {
+		Long difference = endDate.getTime() - startDate.getTime();
+		Long hours = TimeUnit.MILLISECONDS.toHours(difference);
+		Long minutes = TimeUnit.MILLISECONDS.toMinutes(difference) - hours * 60;
+		ArrayList<Long> period = new ArrayList<Long>();
+		period.add(hours);
+		period.add(minutes);
+		System.out.println("horas: " + hours + " minutos: " + minutes);
+		return period;
+
+	}
+
+	public ArrayList<Long> obtainDaysBetweenDates(Timestamp startDate, Timestamp endDate) {
+		Long difference = endDate.getTime() - startDate.getTime();
+		Long days = TimeUnit.MILLISECONDS.toDays(difference);
+		Long hours = TimeUnit.MILLISECONDS.toHours(difference) - days * 24;
+		ArrayList<Long> period = new ArrayList<Long>();
+		period.add(days);
+		period.add(hours);
+		System.out.println("dias: " + days + " horas: " + hours);
+		return period;
+	}
+
+	public boolean isBeneficiary(Integer lotteryNumber) {
+		Integer randomNumber = (int) (Math.random() * 1000 + 1);
+		return randomNumber == lotteryNumber;
+	}
+
+	public Long gethoursParking(Timestamp startDate, Timestamp endDate) {
+		Long difference = endDate.getTime() - startDate.getTime();
+		Long hours = TimeUnit.MILLISECONDS.toHours(difference);
+		return hours;
+
 	}
 }
