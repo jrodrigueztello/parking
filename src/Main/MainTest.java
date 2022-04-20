@@ -30,6 +30,13 @@ class MainTest {
 	}
 	
 	@Test
+	void costMoreThanHourHoursParkingCar() {
+		ParkingCar parkingCar = new ParkingCar("code_001", Timestamp.valueOf("2018-09-01 09:00:00"),
+				Timestamp.valueOf("2018-09-01 12:00:00"));
+		assertEquals(parkingCar.getCostTotal(), (Double)6000.0);
+	}
+	
+	@Test
 	void saveParkingCar() {
 		ParkingService service = new ParkingService();
 		ParkingCar parkingCar = new ParkingCar("code_001", Timestamp.valueOf("2018-09-01 09:00:00"),
@@ -107,8 +114,8 @@ class MainTest {
 	@Test
 	void costMoreThanThreeHoursParkingMotorcycle() {
 		ParkingMotorcycle parkingMotorcycle = new ParkingMotorcycle("code_001", Timestamp.valueOf("2018-09-01 07:00:00"),
-				Timestamp.valueOf("2018-09-01 12:00:00"));
-		assertEquals(parkingMotorcycle.getCostTotal(), (Double)5000.0);
+				Timestamp.valueOf("2018-09-01 12:30:00"));
+		assertEquals(parkingMotorcycle.getCostTotal(), (Double)5500.0);
 	}
 	
 	@Test
@@ -199,6 +206,21 @@ class MainTest {
 		ParkingTruck parkingTruck = new ParkingTruck("code_001", Timestamp.valueOf("2018-09-01 06:00:00"),
 				Timestamp.valueOf("2018-09-02 06:00:00"),10);
 		assertEquals(parkingTruck.getCostTotal(), (Double)15000.0);
+	}
+	
+	@Test
+	void costFullMoreOneDayParkingTruck() {
+		ParkingTruck parkingTruck = new ParkingTruck("code_001", Timestamp.valueOf("2018-09-01 06:00:00"),
+				Timestamp.valueOf("2018-09-03 06:00:00"),10);
+		assertEquals(parkingTruck.getCostTotal(), (Double)30000.0);
+	}
+	
+	
+	@Test
+	void costMoreOneDayParkingTruck() {
+		ParkingTruck parkingTruck = new ParkingTruck("code_001", Timestamp.valueOf("2018-09-01 06:00:00"),
+				Timestamp.valueOf("2018-09-03 11:00:00"),10);
+		assertEquals(parkingTruck.getCostTotal(), (Double)33125.0);
 	}
 	
 	
