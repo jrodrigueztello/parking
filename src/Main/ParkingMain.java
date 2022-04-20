@@ -33,8 +33,8 @@ public class ParkingMain {
 		System.out.println("======report parkings======");
 		System.out.println("");
 		for (Parking parking : listParkings) {
-			System.out.println("código parqueo: " + parking.getCode());
-			System.out.println("tipo vehículo: " + parking.getVehicle());
+			System.out.println("codigo parqueo: " + parking.getCode());
+			System.out.println("tipo vehiculo: " + parking.getVehicle());
 			System.out.println("fecha ingreso: " + parking.getStartDate());
 			System.out.println("fecha salida: " + parking.getEndDate());
 			System.out.println("horas de parqueo: " + parking.getParkingHours());

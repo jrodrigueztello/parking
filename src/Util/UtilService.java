@@ -12,7 +12,6 @@ public class UtilService {
 		ArrayList<Long> period = new ArrayList<Long>();
 		period.add(hours);
 		period.add(minutes);
-		System.out.println("horas: " + hours + " minutos: " + minutes);
 		return period;
 
 	}
@@ -24,7 +23,6 @@ public class UtilService {
 		ArrayList<Long> period = new ArrayList<Long>();
 		period.add(days);
 		period.add(hours);
-		System.out.println("dias: " + days + " horas: " + hours);
 		return period;
 	}
 
