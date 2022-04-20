@@ -56,6 +56,8 @@ class MainTest {
 		Boolean saveParkingCar2 = service.save(parkingCar2);
 		List<Parking> lista = service.listar();
 		assertEquals(lista.size(), 2);
+		assertEquals(saveParkingCar, true);
+		assertEquals(saveParkingCar2, true);
 	}
 	
 
@@ -145,6 +147,9 @@ class MainTest {
 		
 		List<Parking> lista = service.listar();
 		assertEquals(lista.size(), 3);
+		assertEquals(saveparkingMotorcycle, true);
+		assertEquals(saveparkingMotorcycle2, true);
+		assertEquals(saveparkingMotorcycle3, true);
 	}
 	
 	
@@ -251,6 +256,9 @@ class MainTest {
 		
 		List<Parking> lista = service.listar();
 		assertEquals(lista.size(), 3);
+		assertEquals(saveparkingTruck, true);
+		assertEquals(saveparkingTruck2, true);
+		assertEquals(saveparkingTruck3, true);
 	}
 	
 	
