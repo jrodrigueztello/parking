@@ -19,6 +19,7 @@ public class ParkingTruck extends Parking {
 	public Double getCostTotal(Timestamp startDate, Timestamp endDate) {
 		UtilService utilService = new UtilService();
 		ArrayList<Long> daysBetweenDates = utilService.obtainDaysBetweenDates(startDate, endDate);
+		
 		if (daysBetweenDates.get(0) < 1 || (daysBetweenDates.get(0) == 1 && daysBetweenDates.get(1) == 0))
 			return 10000.0;
 		if (utilService.isBeneficiary(this.lotteryNumber))
