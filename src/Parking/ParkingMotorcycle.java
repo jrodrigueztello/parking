@@ -22,8 +22,7 @@ public class ParkingMotorcycle extends Parking {
 			return costTotal;
 		Double additionalsHours = (double) (hoursBetweenDates.get(0) - 3);
 		costTotal += Math.round(additionalsHours) * 1000;
-		if (hoursBetweenDates.get(1) > 0)
-			costTotal += 1000;
+		costTotal += hoursBetweenDates.get(1) * 1000 / 60;
 		return costTotal;
 	}
 

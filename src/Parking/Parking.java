@@ -12,6 +12,8 @@ public abstract class Parking {
 	private Double costTotal;
 	private String code;
 	private Long parkingHours;
+	private Long parkingDays;
+	private Long parkingMinutes;
 
 	// constructor
 	public Parking(String code, TypeVehicle vehicle, Timestamp startDate, Timestamp endDate) {
@@ -22,6 +24,8 @@ public abstract class Parking {
 		this.endDate = endDate;
 		this.costTotal = getCostTotal(startDate, endDate);
 		this.parkingHours = getParkingHours(startDate, endDate);
+		this.parkingDays = getParkingDays(startDate, endDate);
+		this.parkingMinutes = getParkingMinutes(startDate, endDate);
 
 	}
 
@@ -75,7 +79,25 @@ public abstract class Parking {
 		this.parkingHours = parkingHours;
 	}
 
+	public Long getParkingDays() {
+		return parkingDays;
+	}
+
+	public void setParkingDays(Long parkingDays) {
+		this.parkingDays = parkingDays;
+	}
+	
+	
+	public Long getParkingMinutes() {
+		return parkingMinutes;
+	}
+
+	public void setParkingMinutes(Long parkingMinutes) {
+		this.parkingMinutes = parkingMinutes;
+	}
+	
 	// toStringMethod
+
 
 	@Override
 	public String toString() {
@@ -86,9 +108,21 @@ public abstract class Parking {
 	// abstracts methods
 	public abstract Double getCostTotal(Timestamp startDate, Timestamp endDate);
 
+	
+	public Long getParkingDays(Timestamp startDate, Timestamp endDate) {
+		UtilService utilService = new UtilService();
+		return utilService.getDaysParking(startDate, endDate);
+	}
+	
 	public Long getParkingHours(Timestamp startDate, Timestamp endDate) {
 		UtilService utilService = new UtilService();
 		return utilService.gethoursParking(startDate, endDate);
 	}
+		
+	public Long getParkingMinutes(Timestamp startDate, Timestamp endDate) {
+		UtilService utilService = new UtilService();
+		return utilService.getMinutesParking(startDate, endDate);
+	}
+	
 
 }

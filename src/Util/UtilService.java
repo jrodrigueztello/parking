@@ -31,10 +31,27 @@ public class UtilService {
 		return randomNumber == lotteryNumber;
 	}
 
+	public Long getDaysParking(Timestamp startDate, Timestamp endDate) {
+		Long difference = endDate.getTime() - startDate.getTime();
+		Long days = TimeUnit.MILLISECONDS.toDays(difference);
+		return days;
+	}
+
+	
 	public Long gethoursParking(Timestamp startDate, Timestamp endDate) {
 		Long difference = endDate.getTime() - startDate.getTime();
-		Long hours = TimeUnit.MILLISECONDS.toHours(difference);
+		Long days = TimeUnit.MILLISECONDS.toDays(difference);
+		Long hours = TimeUnit.MILLISECONDS.toHours(difference)- days * 24;;
 		return hours;
 
+	}
+
+	
+	public Long getMinutesParking(Timestamp startDate, Timestamp endDate) {
+		Long difference = endDate.getTime() - startDate.getTime();
+		Long days = TimeUnit.MILLISECONDS.toDays(difference);
+		Long hours = TimeUnit.MILLISECONDS.toHours(difference) - days * 24;
+		Long minutes = TimeUnit.MILLISECONDS.toMinutes(difference)- (hours * 60) - (days * 24*60);
+		return minutes;
 	}
 }

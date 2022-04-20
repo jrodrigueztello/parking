@@ -23,12 +23,12 @@ public class ParkingMain {
 				Timestamp.valueOf("2018-09-01 11:15:00"));
 		service.save(vehicle1);
 
-		ParkingMotorcycle vehicle2 = new ParkingMotorcycle("code_002", Timestamp.valueOf("2018-09-01 09:00:15"),
-				Timestamp.valueOf("2018-09-01 10:01:15"));
+		ParkingMotorcycle vehicle2 = new ParkingMotorcycle("code_002", Timestamp.valueOf("2018-09-01 09:00:00"),
+				Timestamp.valueOf("2018-09-02 13:30:00"));
 		service.save(vehicle2);
 
-		ParkingTruck vehicle3 = new ParkingTruck("code_003", Timestamp.valueOf("2018-09-01 12:00:15"),
-				Timestamp.valueOf("2018-09-04 12:01:15"), 100);
+		ParkingTruck vehicle3 = new ParkingTruck("code_003", Timestamp.valueOf("2018-09-01 12:00:00"),
+				Timestamp.valueOf("2018-09-04 12:01:00"), 100);
 		service.save(vehicle3);
 
 		// list parkings
@@ -41,7 +41,9 @@ public class ParkingMain {
 			System.out.println("tipo vehiculo: " + parking.getVehicle());
 			System.out.println("fecha ingreso: " + parking.getStartDate());
 			System.out.println("fecha salida: " + parking.getEndDate());
+			System.out.println("dias de parqueo: " + parking.getParkingDays());
 			System.out.println("horas de parqueo: " + parking.getParkingHours());
+			System.out.println("minutos de parqueo: " + parking.getParkingMinutes());
 			System.out.println("costo total: " + parking.getCostTotal());
 			System.out.println("");
 		}

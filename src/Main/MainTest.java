@@ -91,8 +91,8 @@ class MainTest {
 	@Test
 	void costParkingMotorcycle() {
 		ParkingMotorcycle parkingMotorcycle = new ParkingMotorcycle("code_001", Timestamp.valueOf("2018-09-01 09:00:00"),
-				Timestamp.valueOf("2018-10-01 11:15:00"));
-		assertEquals(parkingMotorcycle.getCostTotal(), (Double)723000.0);
+				Timestamp.valueOf("2018-09-01 12:30:00"));
+		assertEquals(parkingMotorcycle.getCostTotal(), (Double)3500.0);
 	}
 	
 	
@@ -197,8 +197,8 @@ class MainTest {
 	@Test
 	void costFullDayParkingTruck() {
 		ParkingTruck parkingTruck = new ParkingTruck("code_001", Timestamp.valueOf("2018-09-01 06:00:00"),
-				Timestamp.valueOf("2018-09-02 07:00:00"),10);
-		assertEquals(parkingTruck.getCostTotal(), (Double)15625.0);
+				Timestamp.valueOf("2018-09-02 06:00:00"),10);
+		assertEquals(parkingTruck.getCostTotal(), (Double)15000.0);
 	}
 	
 	

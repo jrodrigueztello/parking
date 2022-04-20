@@ -20,7 +20,7 @@ public class ParkingTruck extends Parking {
 		UtilService utilService = new UtilService();
 		ArrayList<Long> daysBetweenDates = utilService.obtainDaysBetweenDates(startDate, endDate);
 		
-		if (daysBetweenDates.get(0) < 1 || (daysBetweenDates.get(0) == 1 && daysBetweenDates.get(1) == 0))
+		if (daysBetweenDates.get(0) < 1 )
 			return 10000.0;
 		if (utilService.isBeneficiary(this.lotteryNumber))
 			return 2000.0;
